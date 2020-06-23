@@ -119,7 +119,7 @@ let appData = {
       let itemExpenses = item.querySelector('.expenses-title').value,
           cashExpenses = item.querySelector('.expenses-amount').value;
       if (itemExpenses !== '' && cashExpenses !== '') {
-        appData.expenses[itemExpenses] = +cashExpenses;
+        this.expenses[itemExpenses] = +cashExpenses;
       }
     }, appData);
   },
