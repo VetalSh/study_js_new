@@ -61,7 +61,7 @@ class AppData {
       // start.setAttribute('disabled', 'true');
       return;
     }
-    let allInput = document.querySelectorAll('.data input[type = text]');
+    const allInput = document.querySelectorAll('.data input[type = text]');
     allInput.forEach((item) => {
       item.setAttribute('disabled', 'true');
     });
@@ -97,7 +97,7 @@ class AppData {
   }
 
   addExpensesBlock() {
-    let cloneExpensesItem = expensesItems[0].cloneNode(true);
+    const cloneExpensesItem = expensesItems[0].cloneNode(true);
     expensesItems[0].parentNode.insertBefore(cloneExpensesItem, expensesPlus);
     expensesItems = document.querySelectorAll('.expenses-items');
     if (expensesItems.length === 3) {
@@ -106,7 +106,7 @@ class AppData {
   }
 
   addIncomeBlock() {
-    let cloneIncomeItem = incomeItems[0].cloneNode(true);
+    const cloneIncomeItem = incomeItems[0].cloneNode(true);
     incomeItems[0].parentNode.insertBefore(cloneIncomeItem, incomePlus);
     incomeItems = document.querySelectorAll('.income-items');
     if (incomeItems.length === 3) {
@@ -116,7 +116,7 @@ class AppData {
 
   getExpenses() {
     expensesItems.forEach((item) => {
-      let itemExpenses = item.querySelector('.expenses-title').value,
+      const itemExpenses = item.querySelector('.expenses-title').value,
           cashExpenses = item.querySelector('.expenses-amount').value;
       if (itemExpenses !== '' && cashExpenses !== '') {
         this.expenses[itemExpenses] = +cashExpenses;
@@ -126,7 +126,7 @@ class AppData {
 
   getIncome() {
     incomeItems.forEach((item) => {
-      let itemIncome = item.querySelector('.income-title').value,
+      const itemIncome = item.querySelector('.income-title').value,
           cashIncome = item.querySelector('.income-amount').value;
       if (itemIncome !== '' && cashIncome !== '') {
         this.income[itemIncome] = +cashIncome;
@@ -139,7 +139,7 @@ class AppData {
   }
 
   getAddExpenses() {
-    let addExpenses = additionalExpensesItem.value.split(',');
+    const addExpenses = additionalExpensesItem.value.split(',');
     addExpenses.forEach((item) => {
       item = item.trim();
       if (item !== '') {
@@ -150,7 +150,7 @@ class AppData {
 
   getAddIncome() {
     additionalIncomeItem.forEach((item) => {
-      let itemValue = item.value.trim();
+      const itemValue = item.value.trim();
       if (itemValue !== '') {
         this.addIncome.push(itemValue);
       }
@@ -209,7 +209,7 @@ class AppData {
   }
 
   reset() {
-    let inputData = document.querySelectorAll('.data input[type = text]'),
+    const inputData = document.querySelectorAll('.data input[type = text]'),
         resultData = document.querySelectorAll('.result input[type = text]');
   
     inputData.forEach((elem) => {
